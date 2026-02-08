@@ -1,0 +1,8 @@
+# .dockerignore - Dateien die nicht ins Docker Image sollen
+.git
+.gitignore
+README.md
+*.md
+.env
+.DS_Store
+node_modules
