@@ -1,0 +1,14 @@
+# robots.txt für Von A bis Z
+
+User-agent: *
+Allow: /
+
+# Sitemap Location (WICHTIG: Ersetze DEINE-DOMAIN.de mit deiner echten Domain!)
+Sitemap: https://vonabisz.de/sitemap.xml
+
+# Optional: Crawl-Delay (nur wenn Server überlastet wird)
+# Crawl-delay: 10
+
+# Disallow für zukünftige Admin-Bereiche (wenn vorhanden)
+# Disallow: /admin/
+# Disallow: /api/
