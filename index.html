@@ -150,16 +150,27 @@
                 transform: translateY(0);
             }
         }
+
+        /* ✅ Mobile Menu Styles */
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
 
-    <!-- Header / Navigation -->
+    <!-- ✅ Header / Navigation (MOBILE MENU HINZUGEFÜGT) -->
     <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="logo.png" alt="Von A bis Z Logo" class="h-12">
             </div>
+            
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#features" class="text-gray-600 hover:text-black transition">Features</a>
                 <a href="#how-it-works" class="text-gray-600 hover:text-black transition">So funktioniert's</a>
@@ -168,19 +179,40 @@
                     Jetzt anmelden
                 </a>
             </div>
+
+            <!-- ✅ Mobile Hamburger Button -->
+            <button id="mobileMenuButton" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </nav>
+
+        <!-- ✅ Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-gray-100">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#features" class="block text-gray-600 hover:text-black transition py-2">Features</a>
+                <a href="#how-it-works" class="block text-gray-600 hover:text-black transition py-2">So funktioniert's</a>
+                <a href="#faq" class="block text-gray-600 hover:text-black transition py-2">FAQ</a>
+                <a href="#waitlist" class="block btn-primary text-black font-semibold px-6 py-3 rounded-full text-center">
+                    Jetzt anmelden
+                </a>
+            </div>
+        </div>
     </header>
 
     <main class="pt-20">
         
-        <!-- ✅ Hero Section (SEO-OPTIMIERTE H1) -->
+        <!-- ✅ Hero Section (MOBILE-OPTIMIERTE H1) -->
         <section class="hero-gradient py-20 md:py-32">
             <div class="max-w-7xl mx-auto px-6 text-center fade-in">
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                    Handwerkervermittlung mit KI –<br>
-                    <span class="text-gray-500">Handwerker finden in Minuten</span>
+                <!-- ✅ Mobile: Kürzere H1, Desktop: Volle H1 -->
+                <h1 class="text-4xl md:text-7xl font-bold leading-tight mb-6">
+                    <span class="block md:inline">Handwerker finden</span>
+                    <span class="block md:inline text-gray-500"> – in Minuten</span>
+                    <span class="hidden md:block text-base text-gray-400 font-normal mt-2">KI-basierte Handwerkervermittlung</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                <p class="text-lg md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
                     Beschreibe deinen Auftrag, lade ein Foto hoch und erhalte sofort einen KI-basierten Preisvorschlag. 
                     Wir vermitteln dich an geprüfte <strong>Fachbetriebe</strong> – von Elektriker bis Schreiner.
                 </p>
@@ -206,10 +238,10 @@
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-8">
                         Warum Du keine Zeit mit Handwerkersuche verschwenden solltest
                     </h2>
-                    <div class="text-lg md:text-xl text-gray-600 leading-relaxed space-y-6">
+                    <div class="text-base md:text-xl text-gray-600 leading-relaxed space-y-6">
                         <p>
                             Stundenlang <strong>Handwerker anrufen</strong>? Wochenlang auf einen <strong>Kostenvoranschlag</strong> warten? 
                             Nicht mit Von A bis Z. Unsere KI-gestützte <strong>Handwerkervermittlung</strong> analysiert deinen Auftrag in Sekunden 
@@ -230,8 +262,8 @@
         <section id="features" class="py-24 bg-gray-50">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Intelligent. Einfach. Schnell.</h2>
-                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Intelligent. Einfach. Schnell.</h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
                         Von A bis Z nutzt modernste KI-Technologie für präzise <strong>Handwerksleistungen</strong>-Vermittlung.
                     </p>
                 </div>
@@ -283,8 +315,8 @@
         <section id="how-it-works" class="py-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">So funktioniert die Handwerker-Vermittlung</h2>
-                    <p class="text-xl text-gray-600">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">So funktioniert die Handwerker-Vermittlung</h2>
+                    <p class="text-lg md:text-xl text-gray-600">
                         In drei einfachen Schritten zum perfekten Handwerker – von der <strong>Handwerkersuche</strong> bis zur Beauftragung
                     </p>
                 </div>
@@ -333,8 +365,8 @@
         <section class="py-24 bg-gray-50">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Alle Handwerker-Services auf einer Plattform</h2>
-                    <p class="text-xl text-gray-600">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Alle Handwerker-Services auf einer Plattform</h2>
+                    <p class="text-lg md:text-xl text-gray-600">
                         Von der Elektroinstallation bis zur Küchenmontage – unsere <strong>Dienstleisterplattform</strong> verbindet dich mit Profis aus allen Gewerken
                     </p>
                 </div>
@@ -395,7 +427,7 @@
         <section id="faq" class="py-24" itemscope itemtype="https://schema.org/FAQPage">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Häufige Fragen zur Handwerkervermittlung</h2>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Häufige Fragen zur Handwerkervermittlung</h2>
                 </div>
                 
                 <div class="space-y-6">
@@ -498,8 +530,8 @@
         <section id="waitlist" class="py-24 bg-black text-white">
             <div class="max-w-3xl mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Sei als einer der Ersten mit dabei!</h2>
-                    <p class="text-xl text-gray-300">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Sei als einer der Ersten mit dabei!</h2>
+                    <p class="text-lg md:text-xl text-gray-300">
                         Trage dich jetzt in die Warteliste ein und erhalte exklusiven Early Access zur App – plus Sonderkonditionen für Gründungsmitglieder.
                     </p>
                 </div>
@@ -591,8 +623,25 @@
         </div>
     </footer>
 
-    <!-- ✅ AJAX Form Handler (UNVERÄNDERT) -->
+    <!-- ✅ JavaScript (MOBILE MENU + FORM HANDLER) -->
     <script>
+        // ✅ Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // ✅ Form Handler
         document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -637,7 +686,7 @@
             }
         });
         
-        // Smooth Scrolling
+        // ✅ Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
