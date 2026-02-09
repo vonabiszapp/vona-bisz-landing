@@ -6,6 +6,8 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Kopiere alle statischen Dateien einzeln
 COPY index.html /usr/share/nginx/html/
+COPY impressum.html /usr/share/nginx/html/
+COPY datenschutz.html /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
 
