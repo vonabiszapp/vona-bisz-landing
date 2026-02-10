@@ -539,6 +539,9 @@
                 </div>
                 
                 <form id="waitlistForm" class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl smooth-shadow">
+                    <div style="display:none;" aria-hidden="true">
+        <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
+    </div>
                     <div class="mb-6">
                         <label for="email" class="block text-sm font-medium mb-2">E-Mail-Adresse</label>
                         <input type="email" id="email" name="email" required 
@@ -656,6 +659,16 @@
             formMessage.classList.add('hidden');
             
             const formData = new FormData(e.target);
+            // 🛑 Falls das Honeypot-Feld ausgefüllt ist -> Bot erkannt!
+if (formData.get('honeypot')) {
+    formMessage.textContent = '🎉 Erfolgreich! Du bist auf der Warteliste.';
+    formMessage.className = 'mt-4 text-center text-brand font-semibold';
+    formMessage.classList.remove('hidden');
+    e.target.reset();
+    submitButton.disabled = false;
+    submitButton.textContent = originalButtonText;
+    return; // Bricht das Senden an Formspree hier ab
+}
             const data = {
                 email: formData.get('email'),
                 userType: formData.get('userType'),
